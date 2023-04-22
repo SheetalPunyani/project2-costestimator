@@ -1,22 +1,26 @@
+:root {
+	margin: 0;
+}
+
 body {
 	background-color: rgb(233, 223, 255);
-	font-family: "open sans", sans-serif;
+	font-family: "Open Sans", sans-serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 32px;
 	color: rgb(44, 44, 44);
-	overflow-x: hidden;
 }
 h1 {
 	color: rgb(83, 49, 156);
-	margin: 32px 0 64px 0;
+	margin: 32px 0 45px 0;
 }
 .container {
 	background-color: white;
 	width: 100%;
-	max-width: 700px;
+	max-width: 725px;
+	box-sizing: border-box;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -24,7 +28,6 @@ h1 {
 	border-radius: 20px;
 	padding: 0 35px 35px 35px;
 	position: relative;
-	box-sizing: border-box;
 }
 .tabs {
 	display: flex;
@@ -35,6 +38,7 @@ h1 {
 	color: rgb(200, 175, 255);
 	padding: 16px;
 }
+
 .tabs p {
 	padding: 8px;
 }
@@ -42,7 +46,7 @@ h1 {
 	color: rgb(83, 49, 156);
 	cursor: pointer;
 }
-.tabs .active {
+.tabs p.active {
 	color: rgb(83, 49, 156);
 	position: relative;
 }
@@ -50,8 +54,17 @@ h1 {
 	height: 3px;
 	width: 100%;
 	position: absolute;
-	top: 98px;
 	background-color: rgb(231, 231, 231);
+	top: 98px;
+}
+.underline {
+	height: 4px;
+	background-color: purple;
+	width: 200px;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
 .tabs .active::before {
 	content: "";
@@ -60,18 +73,17 @@ h1 {
 	background-color: rgb(83, 49, 156);
 	position: absolute;
 	bottom: -32px;
-	left: -50%;
 	z-index: 2;
+	left: -50%;
 	border-radius: 10px;
 }
-.toggle-wrapper {
+.toggle-wraper {
 	display: flex;
-	margin-top: 20px;
+	margin-top: 35px;
 }
-.toggle-wrapper img {
+.toggle-wraper img {
 	height: 40px;
-	margin: 0px 16px;
-	/* top&bottom left&right */
+	margin: 0 16px;
 }
 .toggle {
 	background-color: rgb(83, 49, 156);
@@ -82,8 +94,7 @@ h1 {
 	justify-content: space-between;
 	align-items: center;
 	box-sizing: border-box;
-	padding: 0px 4px 0px 16px;
-	/* top right bottom left */
+	padding: 0 4px 0 16px;
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 12px;
@@ -97,33 +108,30 @@ h1 {
 	padding: 4px 16px;
 	border-radius: 20px;
 }
-.sessions-card {
+.session-card {
 	background-color: rgb(250, 247, 255);
 	text-align: center;
-	padding: 32px; /*32px on all sides*/
+	padding: 32px;
 	width: 50%;
 	text-transform: uppercase;
-	margin: 16px 0px;
-	/* top&bottom left&right */
+	margin: 16px 0;
 	border-radius: 10px;
 	box-sizing: border-box;
 }
-.sessions-card p {
+.session-card p {
 	color: rgb(44, 44, 44);
 	font-size: 12px;
 	font-weight: bold;
-	/* margin-bottom: 0px; use this or below one */
 	margin: 16px 0 0 0;
 }
-.sessions-card .number {
+.session-card .number {
 	color: rgb(83, 49, 156);
-	font-size: 54px;
-	margin: 0px;
+	font-size: 56px;
+	margin: 0;
 }
 .description {
 	line-height: 32px;
 	margin: 16px 0 32px 0;
-	/* top right bottom left */
 }
 .slider {
 	width: 100%;
@@ -155,11 +163,11 @@ h1 {
 .slider .point {
 	height: 24px;
 	width: 24px;
-	background-color: rgb(83, 49, 156);
+	background-color: rgba(83, 49, 156, 1);
 	border-radius: 50%;
 	position: absolute;
 	top: -5px;
-	left: 98%;
+	left: 29%;
 	border: 2px solid white;
 	transition: 0.15s transform ease;
 }
@@ -169,7 +177,6 @@ h1 {
 }
 .scale {
 	width: 100%;
-	margin: 12px 0 0 0;
 }
 .slider .scale ul {
 	list-style: none;
@@ -179,7 +186,6 @@ h1 {
 	font-weight: bold;
 	color: rgb(166, 166, 166);
 }
-
 .card-wrapper {
 	display: flex;
 }
@@ -191,23 +197,23 @@ h1 {
 	box-shadow: 0px 3px 11px 1px rgba(0, 0, 0, 0.1);
 	text-align: center;
 	font-weight: bold;
-	transition: 0.15s tansform ease;
+	transition: 0.15s transform ease;
 	color: rgb(83, 49, 156);
 	position: relative;
 }
 .card:hover {
 	transform: translateY(-8px);
 }
+.card .price {
+	font-size: 38px;
+	color: rgb(44, 44, 44);
+}
 .card .top-section {
 	padding: 8px;
+	text-transform: uppercase;
 }
 .card .top-section p {
 	margin: 4px 0;
-	text-transform: uppercase;
-}
-.card .price {
-	font-size: 42px;
-	color: rgb(44, 44, 44);
 }
 .card hr {
 	width: 30%;
@@ -220,7 +226,7 @@ h1 {
 	background-color: rgb(83, 49, 156);
 	padding: 16px;
 	border-radius: 10px;
-	transition: 0.15s tansform ease;
+	transition: 0.15s transform ease;
 	font-weight: bold;
 	margin: 8px 0;
 }
@@ -246,20 +252,20 @@ h1 {
 footer {
 	background-color: black;
 	color: white;
+	margin-top: 35px;
+	padding: 25px;
 	width: 100vw;
-	padding: 50px;
-	margin: 40px 0 -40px 0;
-	/* margin-bottom: -40px; */
-	height: 40px;
-}
-footer img {
-	width: 2rem;
-	height: 2rem;
-	margin: 0 5px;
+	margin-bottom: -40px;
 }
 .footer-content {
 	text-align: center;
 }
+footer img {
+	height: 2rem;
+	width: 2rem;
+	margin: 0 8px;
+}
+
 @media only screen and (max-width: 750px) {
 	.card {
 		width: 100%;
@@ -267,26 +273,37 @@ footer img {
 	.card-wrapper {
 		flex-wrap: wrap-reverse;
 	}
-	.sessions-card {
+	.session-card {
 		width: 80%;
 	}
 }
+
 @media only screen and (max-width: 600px) {
-	.body {
+	body {
 		padding: 16px;
 	}
 	h1 {
-		margin: 0 0 16px 0;
+		margin: 0 0 13px 0;
 	}
 	.container {
-		padding: 0 16px;
-		/* 0 in top & botoom  and 16px on the left and right*/
+		padding: 0 8.5px;
 	}
-	.sessions-card {
+	.session-card {
 		width: 100%;
 	}
-	.toggle-wrapper {
+	.toggle-wraper {
 		width: 90%;
 		justify-content: space-around;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+	.tabs p {
+		font-size: 12px;
+	}
+	.tabs .active::before {
+		bottom: -41px;
+		width: 100%;
+		left: 0;
 	}
 }
